@@ -41,6 +41,7 @@ class WordHunts extends SimpleScene {
     }
     this.load.image(":_t", "numbers/timer/:.png");
     
+    this.load.audio("music", "audio/whmusic.mp3")
     this.load.audio("begin", "audio/begin.mp3");
     this.load.audio("tiktik", "audio/tiktik.mp3");
     for (var i = 0; i < 4; i++) {
@@ -49,6 +50,10 @@ class WordHunts extends SimpleScene {
   }
 
   create() {
+    this.music = this.sound.add("music", {loop: true});
+    if (music == 1) {
+      this.music.play();
+    }
     this.begin = this.sound.add("begin", {loop: false});
     this.tiktik = this.sound.add("tiktik", {loop: true});
     this.valid = [];
@@ -107,7 +112,7 @@ class WordHunts extends SimpleScene {
     this.letterCovers = [];
     for (var i = 0; i < 16; i++) {
       //let cover = this.add.rectangle((deviceWidth * (221 / iphoneWidth) + (i % 4) * deviceWidth * (178 / iphoneWidth)) + deviceWidth + no_start * -deviceWidth, deviceHeight * (878 / iphoneHeight) + Math.floor(i / 4) * deviceHeight * (178 / iphoneHeight), (deviceWidth * (120 / iphoneWidth)), (deviceHeight * (120 / iphoneHeight)), 0xffffff);
-      let cover = this.add.circle((deviceWidth * (221 / iphoneWidth) + (i % 4) * deviceWidth * (178 / iphoneWidth)) + deviceWidth + no_start * -deviceWidth, deviceHeight * (878 / iphoneHeight) + Math.floor(i / 4) * deviceHeight * (178 / iphoneHeight), (deviceWidth * (80 / iphoneWidth)), 0xffffff);
+      let cover = this.add.circle((deviceWidth * (221 / iphoneWidth) + (i % 4) * deviceWidth * (178 / iphoneWidth)) + deviceWidth + no_start * -deviceWidth, deviceHeight * (878 / iphoneHeight) + Math.floor(i / 4) * deviceHeight * (178 / iphoneHeight), (deviceWidth * (70 / iphoneWidth)), 0xffffff);
       cover.setAlpha(0.01);
       cover.enableClick();
       this.letterCovers.push(cover);
