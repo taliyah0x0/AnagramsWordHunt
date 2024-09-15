@@ -32,11 +32,31 @@ let filteredArray;
 let dict = dictionaries[0][0];
 
 function startHuntGame() {
+  game_start = true;
   dict = dictionaries[0][0];
 
   for (var i = 0; i < 16; i++) {
     let letter_value = document.getElementsByClassName("letter")[i].value;
     letter_inputs.push(letter_value.toUpperCase());
+  }
+
+  if (document.getElementById("start_screen").checked == false) {
+    no_start = 1;
+  }
+
+  if (document.getElementById("timer").checked == false) {
+    timer = 0;
+  }
+
+  countdownMin = parseInt(document.getElementById("min").value, 10);
+  countdownSec = parseInt(document.getElementById("sec").value, 10) - 1;
+
+  if (document.getElementById("music").checked == false) {
+    music = 0;
+  }
+
+  if (document.getElementById("sound").checked == false) {
+    sound = 0;
   }
 
   fetch(`dictionaries/${dict}.json`)
