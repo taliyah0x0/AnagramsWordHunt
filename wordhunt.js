@@ -60,7 +60,9 @@ function startHuntGame() {
 
 const TOTAL_LETTERS = 16;
 let dictionary;
-const alphabet_i = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+// More vowels to increase their chances of appearing
+const alphabet_i = "AAAAABCDEEEEEFGHIIIIIJKLMNOOOOOPQRSTUUUUUVWXYZ".split("");
+const vowels = "AEIOU".split("");
 let letters = [];
 
 function makeLetterBoxes() {
